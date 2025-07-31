@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: YuseiMagic;
+  src: url("./assets/fonts/YuseiMagic-Regular.ttf") format("truetype");
+}
+
+@theme{
+  --font-yuseimagic: YuseiMagic, "sans-serif";
+  --color-primary: #012344;
+  --color-second: #f2c15e;
+  --color-tertiary: #003468;
+  --text-default: 20px;
+}
+
+@layer{
+  .spacing {
+    padding: 2rem;
+  }
+}
+
+body {
+  font-family: var(--font-yuseimagic);
+  color: white;
+  background-color: black;
+}
+
+li:hover{
+  cursor: pointer;
+}
+
+button:hover{
+  cursor: pointer;
+}
