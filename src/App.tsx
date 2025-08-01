@@ -12,7 +12,7 @@ function App(){
     const currentScreen = useSelector((state: RootState) => state.screen.current);
 
     useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0});
   }, [currentScreen]);
 
     
