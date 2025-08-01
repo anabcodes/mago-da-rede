@@ -1,69 +1,49 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🧙‍♂️ Mago da Rede
 
-## Expanding the ESLint configuration
+Este projeto foi pensado para ser divertido e educativo. Ele tem uma questão lúdica com um personagem **- o Mago da Rede -** que te convida a desafiá-lo, pois ele promete adivinhar a sua localização. Ele te faz 3 perguntas, dando a impressão que as respostas auxiliam ele a identificar aonde você está, mas na realidade, ele utiliza **Geolocalização por IP fornecida pela API IPInfo.** No final da experiência, ele te convida a entender a "magia" que ele fez, e então ele **ensina como funciona a Geolocalização por IP e alerta** sobre muitos sites fazerem isso, as vezes sem te indicar de forma explícita que está pegando sua localização aproximada.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+##  🌌  Deploy
+
+Este projeto está hospedado na internet. Para acessá-lo acesse o link: [clique aqui](https://magodarede.netlify.app/)
+
+
+
+## 🔮 Stack utilizada
+
+* **Biblioteca principal**: React;
+* **Gerenciamento de estado global**: Redux;
+* **Estilização**: TailwindCSS.
+
+
+## 🌕 Funcionalidades
+
+- **Questionário com 3 perguntas;**
+- **Fornecimento do IP do usuário e da geolocalização dele.**
+
+## ✨ Rodando localmente
+
+**Clone o projeto e entre no diretório**
+
+```bash
+git clone <link_do_projeto>
+cd mago-da-rede
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Instale as dependências**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Inicie o servidor**
+
+```bash
+npm run dev
 ```
