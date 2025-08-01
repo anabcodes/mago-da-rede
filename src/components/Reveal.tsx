@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setScreen } from "../features/screen/screenSlice";
 
@@ -37,6 +37,21 @@ function Reveal(){
         fetchLocation();
     }, []);
 
+    const buttonRef = useRef<HTMLButtonElement>(null);
+    
+    useEffect(() => {
+        setInterval(()=> {
+            const btn = buttonRef.current;
+            if(btn){
+                btn.classList.add('shakeAnimation');
+                setTimeout(()=> {
+                    btn.classList.remove('shakeAnimation')
+                }, 400)
+            }
+        }, 3000)
+    },[])
+
+
     return(
         <>
         <section className="flex flex-col gap-6 container spacing place-self-center justify-center items-center relative h-[100vh]">
@@ -54,7 +69,7 @@ function Reveal(){
         </div>
         </section> 
         <section className="flex flex-col gap-6 container spacing place-self-center justify-center items-center relative">
-            <p className="text-2xl text-center">Ei, quer saber como fiz essa magia? <button onClick={() => dispatch(setScreen('explanation'))}  className="text-second ">Clica aqui que te conto!</button></p>
+            <p className="text-2xl text-center">Ei, quer saber como fiz essa magia? <button ref={buttonRef} onClick={() => dispatch(setScreen('explanation'))}  className="text-second ">Clica aqui que te conto!</button></p>
         </section>
         </>
     )

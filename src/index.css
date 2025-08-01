@@ -11,6 +11,16 @@
   --color-second: #f2c15e;
   --color-tertiary: #003468;
   --text-default: 20px;
+
+  @keyframes shake {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+  }
+
 }
 
 @layer{
@@ -31,4 +41,8 @@ li:hover{
 
 button:hover{
   cursor: pointer;
+}
+
+.shakeAnimation{
+  animation: shake 0.4s ease-in-out;
 }

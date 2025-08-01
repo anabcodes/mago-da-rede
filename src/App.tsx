@@ -5,10 +5,16 @@ import Intro from "./components/Intro";
 import Explanation from "./components/Explanation";
 import Footer from "./components/Footer";
 import type { RootState } from "./app/store";
+import { useEffect } from 'react';
 
 function App(){
 
-    const currentScreen = useSelector((state: RootState) => state.screen.current)
+    const currentScreen = useSelector((state: RootState) => state.screen.current);
+
+    useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentScreen]);
+
     
     return(
         <>

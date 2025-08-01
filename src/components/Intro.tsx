@@ -1,8 +1,22 @@
 import { useDispatch } from 'react-redux';
 import { setScreen } from '../features/screen/screenSlice'
+import { useEffect, useRef } from 'react';
 
 function Intro(){
     const dispatch = useDispatch();
+    const buttonRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => {
+        setInterval(()=> {
+            const btn = buttonRef.current;
+            if(btn){
+                btn.classList.add('shakeAnimation');
+                setTimeout(()=> {
+                    btn.classList.remove('shakeAnimation')
+                }, 400)
+            }
+        }, 3000)
+    },[])
 
     return(
         <>
@@ -12,7 +26,7 @@ function Intro(){
             <div className="w-full h-75 bg-contain bg-center bg-no-repeat flex justify-center items-center" style={{ backgroundImage: "url('/galaxy.png')" }}>
             <img className="h-full object-cover" src="/mago-da-rede.png" alt="" />
             </div>
-            <button className="text-3xl bg-primary text-second  py-4 px-10 border-5 rounded-3xl font-bold" onClick={() => dispatch(setScreen('quiz'))}>Me desafie!</button>
+            <button ref={buttonRef} className="text-3xl bg-primary text-second  py-4 px-10 border-5 rounded-3xl font-bold" onClick={() => dispatch(setScreen('quiz'))}>Me desafie!</button>
         </section>
         </>
     )

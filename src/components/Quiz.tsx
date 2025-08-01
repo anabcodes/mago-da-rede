@@ -42,7 +42,7 @@ function Quiz(){
                 <ul className="text-second text-2xl flex flex-col gap-4">
                     {questions[currentQuestion].choices.map((choice, index)=> {
                     return(  
-                        <li className="py-2 px-10 bg-tertiary rounded-2xl text-center" onClick={handleQuestion} key={index}>
+                        <li className="py-2 px-10 bg-tertiary rounded-2xl text-center hover:rotate-2 hover:duration-700" onClick={handleQuestion} key={index}>
                             {choice}
                         </li>
                     )
